@@ -1,0 +1,12 @@
+services:
+  database:
+    image: 'mariadb:10.3'
+    container_name: database
+    restart: always
+    environment:
+      MYSQL_USER: ticketsManagerUser
+      MYSQL_PASSWORD: ChangerLeMotDePasse1234
+      MYSQL_DATABASE: tickets_manager
+      MYSQL_ROOT_PASSWORD: ChangerLeMotDePasse1234
+    ports: 
+      - "3306:3306"

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Tickets Manager App</string>
+    <string name="success_icon_description">Succès</string>
+    <string name="waring_icon_description">Attention</string>
+    <string name="warning_title">Attention</string>
+    <string name="error_not_found_title">Inconnu</string>
+    <string name="error_not_found_message">Ticket non reconnu</string>
+    <string name="error_ticket_already_scanned">Ticket déjà scanné</string>
+    <string name="error_icon_description">Erreur</string>
+</resources>

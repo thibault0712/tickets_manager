@@ -1,0 +1,63 @@
+version: '3.8'
+
+services:
+  database:
+    image: 'mariadb:10.3'
+    container_name: database
+    restart: always
+    environment:
+      MYSQL_USER: ticketsManagerUser
+      MYSQL_PASSWORD: ChangerLeMotDePasse1234
+      MYSQL_DATABASE: tickets_manager
+      MYSQL_ROOT_PASSWORD: ChangerLeMotDePasse1234
+    networks:
+      - tickets_net
+    # ports:
+      # PAS DE PORT ICI POUR NE PAS EXPOSER LA BDD EN PROD
+      # - "3306:3306"
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "thibault", "-pThibault0712"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+  tickets_manager_api:
+    build:
+      context: ./tickets_manager_api
+      dockerfile: Dockerfile
+    container_name: tickets_manager_api
+    environment:
+      # Variables d'environnement prend comme base le fichier application.properties
+      # Ici on change uniquement le serveur et les identifiants de connexion
+      SPRING_DATASOURCE_URL: jdbc:mysql://database:3306/tickets_manager
+      SPRING_DATASOURCE_USERNAME: ticketsManagerUser
+      SPRING_DATASOURCE_PASSWORD: ChangerLeMotDePasse1234
+    depends_on:
+      database:
+        condition: service_healthy
+    ports:
+      - "8080:8080"
+    restart: always
+    networks:
+      - tickets_net
+    
+  tickets_manager_web:
+    build:
+      context: ./tickets_manager_website
+      dockerfile: Dockerfile
+      args: 
+        # à changer en IP public car ce code sera chargé sur le client
+        VITE_API_IP: localhost
+        VITE_API_PORT: 8080
+    container_name: tickets_manager_website
+    ports:
+      - "80:80"
+    networks:
+      - tickets_net
+    restart: always
+    
+    
+networks:
+  tickets_net:
+    driver: bridge

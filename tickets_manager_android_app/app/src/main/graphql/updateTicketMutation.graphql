@@ -1,0 +1,17 @@
+
+
+mutation updateTicketMutation($uuid: String!, $ticketInput: TicketInput!) {
+
+    updateTicket(uuid: $uuid, ticketInput: $ticketInput) {
+        used
+        uuid
+        user {
+            uuid
+            firstName
+            lastName
+            email
+            phone
+        }
+    }
+
+}

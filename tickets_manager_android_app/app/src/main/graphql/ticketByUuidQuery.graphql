@@ -1,0 +1,18 @@
+
+
+query ticketByUuidQuery($uuid: String!) {
+
+    ticketByUuid(uuid: $uuid) {
+
+        used
+        uuid
+        user {
+            uuid
+            firstName
+            lastName
+            email
+        }
+
+    }
+
+}
