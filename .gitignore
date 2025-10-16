@@ -1,0 +1,54 @@
+# BDD
+mariadb/
+
+# Android
+tickets_manager_android_app/*.iml
+tickets_manager_android_app/.gradle
+tickets_manager_android_app/local.properties
+tickets_manager_android_app/.idea/caches
+tickets_manager_android_app/.idea/libraries
+tickets_manager_android_app/.idea/modules.xml
+tickets_manager_android_app/.idea/workspace.xml
+tickets_manager_android_app/.idea/navEditor.xml
+tickets_manager_android_app/.idea/assetWizardSettings.xml
+tickets_manager_android_app/.DS_Store
+tickets_manager_android_app/build
+tickets_manager_android_app/captures
+tickets_manager_android_app/.externalNativeBuild
+tickets_manager_android_app/.cxx
+tickets_manager_android_app/local.properties
+
+# Website
+tickets_manager_website/node_modules
+
+# API
+tickets_manager_website/target/
+tickets_manager_website/.mvn/wrapper/maven-wrapper.jar
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
