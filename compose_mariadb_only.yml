@@ -10,3 +10,6 @@ services:
       MYSQL_ROOT_PASSWORD: ChangerLeMotDePasse1234
     ports: 
       - "3306:3306"
+    volumes:
+      - ./mariadb/:/var/lib/mysql/
+
