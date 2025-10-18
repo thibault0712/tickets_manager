@@ -1,6 +1,10 @@
 # Tickets Manager (POC)
 Tickets Manager est un système de gestion de tickets, il permet de générer des tickets qui ont un QrCode via un site internet. Ce QrCode peut être scanné via une application android. 
 
+**Vidéo explicative**
+[![Vidéo explicative](https://img.youtube.com/vi/3R3w9vslU90/maxresdefault.jpg)](https://www.youtube.com/watch?v=3R3w9vslU90)
+
+
 **Photos du site internet**
 
 | **Exemple 1** | **Exemple 2** |
